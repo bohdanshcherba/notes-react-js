@@ -1,0 +1,15 @@
+.ico_btn {
+    background-color: transparent;
+    border: 0;
+
+    transition-duration: 0.2s;
+
+    &:hover {
+        color: #0094ff;
+        cursor: pointer;
+    }
+    &_delete:hover {
+        color: #ff0000;
+    }
+}
+
