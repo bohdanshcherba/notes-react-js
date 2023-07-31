@@ -25,8 +25,7 @@ export const Modal: FC<Props> = ({categories, def_note, visible, setVisible, onC
         def_note ? setNote(def_note): null
     },[def_note])
 
-    const closeModal = () => {
-        setVisible(false)
+    const clearModal = () => {
         setNote({
             id: -1,
             name: '',
@@ -38,9 +37,15 @@ export const Modal: FC<Props> = ({categories, def_note, visible, setVisible, onC
         })
     }
 
+    const closeModal = () => {
+        setVisible(false)
+        clearModal()
+    }
+
     const onSave = () =>{
         if (note.name!==''){
             onConfirm(note)
+            clearModal()
             setVisible(false)
         }
     }
